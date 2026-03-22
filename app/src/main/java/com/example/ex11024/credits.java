@@ -6,6 +6,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Activity for displaying application credits.
+ *
+ * @author adam
+ * @version 1.0
+ * @since 20.3.2026
+ */
 public class credits extends AppCompatActivity {
 
     @Override

@@ -16,6 +16,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import java.io.FileOutputStream;
 
+/**
+ * Activity for adding custom questions to the quiz.
+ *
+ * @author adam
+ * @version 1.0
+ * @since 20.3.2026
+ */
 public class addQuestion extends AppCompatActivity {
 
     private EditText etQuestion, etAnswer1, etAnswer2, etAnswer3, etAnswer4;
@@ -59,6 +66,11 @@ public class addQuestion extends AppCompatActivity {
         });
     }
 
+    /**
+     * Saves the formatted question string to the internal storage file.
+     *
+     * @param questionData The pipe-separated question and answers string.
+     */
     private void saveQuestionToFile(String questionData) {
         try {
             FileOutputStream fos = openFileOutput("user_questions.txt", Context.MODE_APPEND);

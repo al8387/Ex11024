@@ -20,6 +20,13 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * The main activity of the application, handling the quiz gameplay.
+ *
+ * @author adam
+ * @version 1.0
+ * @since 20.3.2026
+ */
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvQuestion, tvScore, tvHighScore;
@@ -103,6 +110,9 @@ public class MainActivity extends AppCompatActivity {
         if (btn4 != null) btn4.setOnClickListener(listener);
     }
 
+    /**
+     * Loads questions from raw resources and internal storage.
+     */
     private void loadQuestions() {
         allQuestions.clear();
 
@@ -133,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Displays the current question and its answers.
+     */
     private void displayQuestion() {
         if (allQuestions.isEmpty()) return;
 

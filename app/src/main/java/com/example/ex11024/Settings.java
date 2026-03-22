@@ -13,6 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Activity for managing user settings and high scores.
+ *
+ * @author adam
+ * @version 1.0
+ * @since 20.3.2026
+ */
 public class Settings extends AppCompatActivity {
 
     private EditText etUsername;
