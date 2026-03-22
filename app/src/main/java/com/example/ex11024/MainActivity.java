@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         tvQuestion = findViewById(R.id.tvQuestion);
         tvScore = findViewById(R.id.tvScore);
-        tvHighScore = findViewById(R.id.tvBestScore);
+        tvHighScore = findViewById(R.id.tvHighScore);
         btn1 = findViewById(R.id.btnAnswer1);
         btn2 = findViewById(R.id.btnAnswer2);
         btn3 = findViewById(R.id.btnAnswer3);
@@ -80,8 +80,16 @@ public class MainActivity extends AppCompatActivity {
                     score++;
                     if (tvScore != null) tvScore.setText("Score: " + score);
                     Toast.makeText(MainActivity.this, "Correct!", Toast.LENGTH_SHORT).show();
+
+                    if (score > highScore) {
+                        highScore = score;
+                        sp.edit().putInt("highscore", highScore).apply();
+                        if (tvHighScore != null) tvHighScore.setText("High Score: " + highScore);
+                    }
                 } else {
-                    Toast.makeText(MainActivity.this, "Wrong!", Toast.LENGTH_SHORT).show();
+                    score = 0;
+                    if (tvScore != null) tvScore.setText("Score: " + score);
+                    Toast.makeText(MainActivity.this, "Wrong! Score reset.", Toast.LENGTH_SHORT).show();
                 }
 
                 currentQuestionIndex++;
@@ -146,17 +154,8 @@ public class MainActivity extends AppCompatActivity {
             if (btn3 != null) btn3.setText(answers.get(2));
             if (btn4 != null) btn4.setText(answers.get(3));
         } else {
-            if (score > highScore) {
-                highScore = score;
-                sp.edit().putInt("highscore", highScore).apply();
-                if (tvHighScore != null) tvHighScore.setText("High Score: " + highScore);
-            }
-            Toast.makeText(this, "Game Over! Score: " + score, Toast.LENGTH_LONG).show();
-
+            Toast.makeText(this, "Questions repeating!", Toast.LENGTH_SHORT).show();
             currentQuestionIndex = 0;
-            score = 0;
-            if (tvScore != null) tvScore.setText("Score: " + score);
-
             Collections.shuffle(allQuestions);
             displayQuestion();
         }

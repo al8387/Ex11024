@@ -26,7 +26,7 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         etUsername = findViewById(R.id.etUsername);
-        tvBestScore = findViewById(R.id.tvBestScore);
+        tvBestScore = findViewById(R.id.tvHighScore);
         btnSave = findViewById(R.id.btnSaveSettings);
         btnReset = findViewById(R.id.btnResetScore);
 
