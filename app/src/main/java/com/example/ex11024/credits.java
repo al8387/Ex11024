@@ -1,12 +1,10 @@
 package com.example.ex11024;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.Menu;
+import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class credits extends AppCompatActivity {
 
@@ -14,5 +12,21 @@ public class credits extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.menu_settings) startActivity(new Intent(this, Settings.class));
+        else if (id == R.id.menu_add_question) startActivity(new Intent(this, addQuestion.class));
+        else if (id == R.id.menu_credits) return true;
+        else if (id == R.id.menu_game) startActivity(new Intent(this, MainActivity.class));
+        return super.onOptionsItemSelected(item);
     }
 }

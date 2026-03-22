@@ -11,7 +11,7 @@
     android:layout_marginBottom="32dp">
 
     <TextView
-        android:id="@+id/tvCurrentScore"
+        android:id="@+id/tvScore"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -21,7 +21,7 @@
         android:textColor="#333333"/>
 
     <TextView
-        android:id="@+id/tvHighScore"
+        android:id="@+id/tvBestScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="High Score: 0"
@@ -99,7 +99,7 @@
         android:layout_weight="1" />
 
     <Button
-        android:id="@+id/btnAddQuestion"
+        android:id="@+id/btnAddCustom"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Add Custom Question"
